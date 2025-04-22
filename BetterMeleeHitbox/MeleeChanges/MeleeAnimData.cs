@@ -30,8 +30,6 @@ namespace BMH.MeleeChanges
 
         public void Apply(MeleeAttackData data)
         {
-            DinoLogger.Log($"Applying anim changes! {_attackLength}, {_attackHitTime}, {_damageStartTime}, {_damageEndTime}, {_attackCamFwdHitTime}, {_comboEarlyTime}");
-
             if (_attackLength >= 0)
                 data.m_attackLength = _attackLength;
             if (_attackHitTime >= 0)
@@ -50,8 +48,6 @@ namespace BMH.MeleeChanges
 
         public bool Equals(MeleeAttackData data)
         {
-            DinoLogger.Log($"Verifying anim validity: {data.m_attackLength} = {_attackLength}, {data.m_attackHitTime} = {_attackHitTime}, {data.m_damageStartTime} = {_damageStartTime}, {data.m_damageEndTime} = {_damageEndTime}, {data.m_attackCamFwdHitTime} = {_attackCamFwdHitTime}, {data.m_comboEarlyTime} = {_comboEarlyTime}");
-
             if (_attackLength >= 0 && !Approximately(data.m_attackLength, _attackLength))
                 return false;
             if (_attackHitTime >= 0 && !Approximately(data.m_attackHitTime, _attackHitTime))

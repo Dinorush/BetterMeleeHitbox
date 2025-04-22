@@ -19,7 +19,6 @@ namespace BMH.MeleeChanges
 
         public void Apply(MeleeArchetypeDataBlock data)
         {
-            DinoLogger.Log($"Applying archetype changes! Camera Ray: {data.CameraDamageRayLength} -> {_cameraDamageRayLength}, Attack Sphere: {data.AttackSphereRadius} -> {_attackSphereRadius}");
             if (_cameraDamageRayLength >= 0)
                 data.CameraDamageRayLength = _cameraDamageRayLength;
             if (_attackSphereRadius >= 0)
@@ -30,12 +29,10 @@ namespace BMH.MeleeChanges
 
         public bool Equals(MeleeArchetypeDataBlock data)
         {
-            DinoLogger.Log($"Checking equivalency: {data.CameraDamageRayLength} = {_cameraDamageRayLength}, Attack Sphere: {data.AttackSphereRadius} = {_attackSphereRadius}");
             if (_cameraDamageRayLength >= 0 && !Approximately(data.CameraDamageRayLength, _cameraDamageRayLength))
                 return false;
             if (_attackSphereRadius >= 0 && !Approximately(data.AttackSphereRadius, _attackSphereRadius))
                 return false;
-            DinoLogger.Log($"Archetype match found!");
             return true;
         }
     }

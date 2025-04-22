@@ -20,10 +20,7 @@ namespace BMH
 
             foreach ((var prefab, var changeData) in MeleeChangeData.ChangeDatas)
                 if (changeData.TryGetHitboxData(out var hitboxData))
-                {
-                    DinoLogger.Log("Added hitbox data for prefab " + prefab);
                     MeleeDataAPI.AddData(prefab, hitboxData);
-                }
             Log.LogMessage("Loaded " + MODNAME);
         }
     }
