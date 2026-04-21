@@ -7,7 +7,7 @@ using BMH.MeleeChanges;
 
 namespace BMH
 {
-    [BepInPlugin("Dinorush." + MODNAME, MODNAME, "1.0.0")]
+    [BepInPlugin("Dinorush." + MODNAME, MODNAME, "1.0.1")]
     [BepInDependency("dev.gtfomodding.gtfo-api", BepInDependency.DependencyFlags.HardDependency)]
     [BepInDependency(MSCWrapper.GUID, BepInDependency.DependencyFlags.HardDependency)]
     internal sealed class EntryPoint : BasePlugin

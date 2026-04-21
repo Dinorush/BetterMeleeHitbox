@@ -57,14 +57,17 @@ namespace BMH.MeleeChanges
             {
                 "Assets/AssetPrefabs/Items/Melee/MeleeWeaponFirstPerson.prefab",
                 new(animDatas: null,
-                    archData: (new(cameraDamageRayLength:1.8f), new(cameraDamageRayLength:1.9f)),
+                    archData: (new(cameraDamageRayLength:1.8f, attackSphereRadius:0.3f), new(cameraDamageRayLength:1.0f, attackSphereRadius:0.05f)),
                     hitboxData: new()
                     {
-                        AttackOffset = new(new(0, -0.12f, 0.55f), new(0, 0f, -0.3f))
+                        AttackOffset = new(new(0, -0.12f, 0.2f), new(0, 0f, -0.3f))
                         {
+                            EntityRayLengthAdd = 0.9f,
+                            EntityOffset = new(0, -0.12f, 0.6f),
+                            EntitySize = 0.3f,
                             CapsuleSize = 0.05f,
                             CapsuleUseCamFwd = true,
-                            CapsuleCamFwdAdd = -1.3f,
+                            CapsuleCamFwdAdd = -1.2f,
                             CapsuleDelay = 0.1f
                         },
                         LightAttackSpeed = 1.3f,
@@ -109,14 +112,17 @@ namespace BMH.MeleeChanges
                         new(comboEarlyTime: 0.3333f)
                         )
                     },
-                    archData: (new(cameraDamageRayLength:1.75f, attackSphereRadius:0.25f), new(cameraDamageRayLength:2f, attackSphereRadius:0.15f)),
+                    archData: (new(cameraDamageRayLength:1.75f, attackSphereRadius:0.25f), new(cameraDamageRayLength:1f, attackSphereRadius:0.05f)),
                     hitboxData: new()
                     {
-                        AttackOffset = new(new(0, 0.35f, 0.076f), new(0, -0.4f, 0f))
+                        AttackOffset = new(new(0, -0.05f, 0.03f), new(0, -0.4f, 0f))
                         {
+                            EntityRayLengthAdd = 1f,
+                            EntityOffset = new(0f, 0.65f, 0.076f),
+                            EntitySize = 0.2f,
                             CapsuleSize = 0.05f,
                             CapsuleUseCamFwd = true,
-                            CapsuleCamFwdAdd = -1.7f,
+                            CapsuleCamFwdAdd = -1.2f,
                             CapsuleStateDelay = new()
                             {
                                 { eMeleeWeaponState.AttackChargeReleaseLeft, 0.05f },
@@ -130,13 +136,17 @@ namespace BMH.MeleeChanges
             {
                 "Assets/AssetPrefabs/Items/Melee/MeleeWeaponFirstPersonSpear.prefab",
                 new(animDatas: null,
+                    archData: (new(cameraDamageRayLength:3.2f, attackSphereRadius:0.15f), new(cameraDamageRayLength:1.3f, attackSphereRadius:0.05f)),
                     hitboxData: new()
                     {
-                        AttackOffset = new(new(0, 1.1f, -0.002f), new(0f, -0.3f, 0f))
+                        AttackOffset = new(new(0, 0.6f, -0.002f), new(0f, -0.3f, 0f))
                         {
+                            EntityRayLengthAdd = 1.9f,
+                            EntityOffset = new(0f, 1.4f, -0.002f),
+                            EntitySize = 0.15f,
                             CapsuleSize = 0.05f,
                             CapsuleUseCamFwd = true,
-                            CapsuleCamFwdAdd = -2.2f,
+                            CapsuleCamFwdAdd = -2f,
                             CapsuleDelay = 0.1f
                         }
                     }
@@ -183,17 +193,20 @@ namespace BMH.MeleeChanges
                         new(comboEarlyTime: 0.3333f)
                         )
                     },
-                    archData: (new(cameraDamageRayLength:1.75f), new(cameraDamageRayLength:1.85f)),
+                    archData: (new(cameraDamageRayLength:1.75f, attackSphereRadius : 0.3f), new(cameraDamageRayLength:1.0f, attackSphereRadius : 0.05f)),
                     hitboxData: new()
                     {
-                        AttackOffset = new(new UnityEngine.Vector3(0, 0.6f, 0), new(0, -0.2f, -0.1f), new(0, 0.55f, -0.1f))
+                        AttackOffset = new(new UnityEngine.Vector3(0, 0.15f, 0), new(0, -0.1f, -0.1f), new(0, 0.55f, -0.1f))
                         {
+                            EntityRayLengthAdd = 0.85f,
+                            EntityOffset = new(0f, 0.6f, 0f),
+                            EntitySize = 0.3f,
                             CapsuleSize = 0.05f,
                             CapsuleUseCamFwd = true,
-                            CapsuleCamFwdAdd = -1.2f,
+                            CapsuleCamFwdAdd = -1.15f,
                             CapsuleDelay = 0.05f
                         },
-                        AttackSphereCenterMod = 1f
+                        AttackSphereCenterMod = 1.5f
                     }
                 )
             }
