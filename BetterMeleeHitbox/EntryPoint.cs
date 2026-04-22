@@ -7,8 +7,9 @@ using BMH.MeleeChanges;
 
 namespace BMH
 {
-    [BepInPlugin("Dinorush." + MODNAME, MODNAME, "1.0.1")]
+    [BepInPlugin("Dinorush." + MODNAME, MODNAME, "1.1.0")]
     [BepInDependency("dev.gtfomodding.gtfo-api", BepInDependency.DependencyFlags.HardDependency)]
+    [BepInDependency("Dinorush.ModifierAPI", BepInDependency.DependencyFlags.HardDependency)]
     [BepInDependency(MSCWrapper.GUID, BepInDependency.DependencyFlags.HardDependency)]
     internal sealed class EntryPoint : BasePlugin
     {
@@ -19,8 +20,7 @@ namespace BMH
             new Harmony(MODNAME).PatchAll();
 
             foreach ((var prefab, var changeData) in MeleeChangeData.ChangeDatas)
-                if (changeData.TryGetHitboxData(out var hitboxData))
-                    MeleeDataAPI.AddData(prefab, hitboxData);
+                MeleeDataAPI.AddInstanceData(prefab, changeData.HitboxData.TryGetMeleeData);
             Log.LogMessage("Loaded " + MODNAME);
         }
     }
